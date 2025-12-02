@@ -37,7 +37,7 @@ export async function GET(request: NextRequest) {
     ];
 
     type Booking = Awaited<ReturnType<typeof prisma.booking.findMany>>[number];
-    const rows = bookings.map((booking: Booking) => [
+    const rows: (string | number)[][] = bookings.map((booking: Booking) => [
       booking.id,
       booking.fullName,
       booking.phoneNumber,
@@ -53,7 +53,7 @@ export async function GET(request: NextRequest) {
 
     const csvContent = [
       headers.join(','),
-      ...rows.map((row) => row.map((cell) => `"${String(cell).replace(/"/g, '""')}"`).join(',')),
+      ...rows.map((row: (string | number)[]) => row.map((cell: string | number) => `"${String(cell).replace(/"/g, '""')}"`).join(',')),
     ].join('\n');
 
     return new NextResponse(csvContent, {
