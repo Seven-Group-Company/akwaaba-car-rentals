@@ -57,10 +57,10 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-8">
               Get in Touch
               <br />
-              We're Here to Help
+              We&apos;re Here to Help
             </h1>
             <p className="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed">
-              We'd love to hear from you. Get in touch with us through any of the following ways, and we'll respond as soon as possible.
+              We&apos;d love to hear from you. Get in touch with us through any of the following ways, and we&apos;ll respond as soon as possible.
             </p>
           </div>
         </section>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                   <h2 className="text-3xl md:text-4xl font-bold mb-4">Send us a Message</h2>
                   <div className="w-16 h-0.5 bg-lime-400 mb-6"></div>
                   <p className="text-gray-400 leading-relaxed">
-                    Fill out the form below and we'll get back to you as soon as possible.
+                    Fill out the form below and we&apos;ll get back to you as soon as possible.
                   </p>
                 </div>
 
@@ -218,7 +218,7 @@ export default function ContactPage() {
                   <h2 className="text-3xl md:text-4xl font-bold mb-4">Visit Our Office</h2>
                   <div className="w-16 h-0.5 bg-lime-400 mb-6"></div>
                   <p className="text-gray-400 leading-relaxed mb-6">
-                    We're located in the heart of Accra, Ghana. Feel free to visit us during our business hours.
+                    We&apos;re located in the heart of Accra, Ghana. Feel free to visit us during our business hours.
                   </p>
                   <div className="bg-zinc-900 rounded-xl p-6 border border-zinc-800">
                     <div className="flex items-start gap-4">
@@ -297,7 +297,7 @@ export default function ContactPage() {
               Need Immediate Assistance?
             </h2>
             <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-              For urgent inquiries or immediate booking assistance, reach out to us directly via phone or WhatsApp. We're here to help 24/7.
+              For urgent inquiries or immediate booking assistance, reach out to us directly via phone or WhatsApp. We&apos;re here to help 24/7.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

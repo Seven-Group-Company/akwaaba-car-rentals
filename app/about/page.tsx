@@ -45,11 +45,11 @@ export default function AboutPage() {
               </div>
               <div className="space-y-6">
                 <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                  Akwaaba Car Rental was founded with a simple mission: to provide reliable, affordable, and customer-focused car rental services. The word "Akwaaba" means "welcome" in the Akan language, and that's exactly how we want every customer to feel when they interact with us.
-              </p>
+                  Akwaaba Car Rental was founded with a simple mission: to provide reliable, affordable, and customer-focused car rental services. The word &quot;Akwaaba&quot; means &quot;welcome&quot; in the Akan language, and that&apos;s exactly how we want every customer to feel when they interact with us.
+                </p>
                 <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-                  Since our inception, we have been committed to maintaining a fleet of well-maintained vehicles and providing exceptional service to all our clients. Whether you need a car for a day, a week, or a month, we're here to make your journey comfortable and hassle-free.
-              </p>
+                  Since our inception, we have been committed to maintaining a fleet of well-maintained vehicles and providing exceptional service to all our clients. Whether you need a car for a day, a week, or a month, we&apos;re here to make your journey comfortable and hassle-free.
+                </p>
                 <p className="text-gray-300 text-base md:text-lg leading-relaxed">
                   We serve individuals, businesses, and travelers who need dependable vehicles for personal use, business trips, special events, or long-distance journeys. We deliver exceptional car rental services that combine comfort, convenience, and professionalism.
                 </p>
@@ -196,7 +196,7 @@ export default function AboutPage() {
                 <Clock className="w-10 h-10 text-lime-400" />
                 <h3 className="text-xl font-bold">24/7 Support</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Round-the-clock customer support for your peace of mind. We're always here to help, no matter when you need us.
+                  Round-the-clock customer support for your peace of mind. We&apos;re always here to help, no matter when you need us.
                 </p>
               </div>
               <div className="space-y-4">

@@ -59,11 +59,11 @@ export default function TermsPage() {
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-lime-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Valid driver's license (minimum age: 23 years with at least one year of driving experience)</span>
+                    <span>Valid driver&apos;s license (minimum age: 23 years with at least one year of driving experience)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-lime-400 rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Valid identification document (National ID, Passport, or Driver's License)</span>
+                    <span>Valid identification document (National ID, Passport, or Driver&apos;s License)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-lime-400 rounded-full mt-2 flex-shrink-0"></div>

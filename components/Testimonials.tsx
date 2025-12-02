@@ -49,7 +49,7 @@ const TestimonialsSection: React.FC = () => {
               className="bg-zinc-900 rounded-2xl p-8 hover:bg-zinc-800 transition-colors duration-300"
             >
               <p className="text-2xl mb-12 leading-relaxed">
-                <span className="text-gray-500">"</span>
+                <span className="text-gray-500">&quot;</span>
                 {index === 0 && (
                   <>
                     <span className="text-gray-500">Clean cars, friendly staff, </span>
@@ -73,7 +73,7 @@ const TestimonialsSection: React.FC = () => {
                     <span className="text-white">Will definitely rent again.</span>
                   </>
                 )}
-                <span className="text-white">"</span>
+                <span className="text-white">&quot;</span>
               </p>
               
               <div className="flex items-center gap-4">

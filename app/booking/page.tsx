@@ -92,7 +92,7 @@ export default function BookingPage() {
               Perfect Ride
             </h1>
             <p className="text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed">
-              Fill out the form below to request a booking. We'll get back to you shortly to confirm your reservation.
+              Fill out the form below to request a booking. We&apos;ll get back to you shortly to confirm your reservation.
             </p>
           </div>
         </section>
