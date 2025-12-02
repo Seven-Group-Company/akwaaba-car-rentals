@@ -1,0 +1,80 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Admin {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique @db.VarChar(255)
+  passwordHash String   @map("password_hash") @db.VarChar(255)
+  name         String   @db.VarChar(255)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @default(now()) @updatedAt @map("updated_at")
+
+  @@map("admins")
+}
+
+model User {
+  id                     Int       @id @default(autoincrement())
+  email                  String    @unique @db.VarChar(255)
+  passwordHash           String    @map("password_hash") @db.VarChar(255)
+  fullName               String    @map("full_name") @db.VarChar(255)
+  role                   String    @default("user") @db.VarChar(50)
+  isVerified             Boolean   @default(false) @map("is_verified")
+  verificationOtp        String?   @map("verification_otp") @db.VarChar(10)
+  verificationExpiresAt  DateTime? @map("verification_expires_at")
+  createdAt              DateTime  @default(now()) @map("created_at")
+  updatedAt              DateTime  @default(now()) @updatedAt @map("updated_at")
+
+  @@index([email], map: "idx_users_email")
+  @@index([isVerified], map: "idx_users_is_verified")
+  @@map("users")
+}
+
+model Booking {
+  id             Int       @id @default(autoincrement())
+  fullName       String    @map("full_name") @db.VarChar(255)
+  phoneNumber    String    @map("phone_number") @db.VarChar(50)
+  email          String    @db.VarChar(255)
+  carType        String    @map("car_type") @db.VarChar(255)
+  pickUpDate     DateTime  @map("pick_up_date")
+  dropOffDate    DateTime  @map("drop_off_date")
+  location       String    @db.VarChar(500)
+  additionalNotes String?  @map("additional_notes") @db.Text
+  status         BookingStatus @default(pending)
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @default(now()) @updatedAt @map("updated_at")
+
+  @@index([status], map: "idx_bookings_status")
+  @@index([createdAt], map: "idx_bookings_created_at")
+  @@map("bookings")
+}
+
+model Fleet {
+  id          Int       @id @default(autoincrement())
+  name        String    @db.VarChar(255)
+  description String?   @db.Text
+  imageUrl    String?   @map("image_url") @db.VarChar(500)
+  pricePerDay Decimal?  @map("price_per_day") @db.Decimal(10, 2)
+  available   Boolean   @default(true)
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @default(now()) @updatedAt @map("updated_at")
+
+  @@index([available], map: "idx_fleet_available")
+  @@map("fleet")
+}
+
+enum BookingStatus {
+  pending
+  confirmed
+  completed
+  cancelled
+
+  @@map("booking_status")
+}
