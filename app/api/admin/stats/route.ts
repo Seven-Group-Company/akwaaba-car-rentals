@@ -33,7 +33,7 @@ export async function GET(request: NextRequest) {
       cancelled: 0,
     };
 
-    statusData.forEach((item) => {
+    statusData.forEach((item: { status: string; _count: { status: number } }) => {
       statusCounts[item.status] = item._count.status;
     });
 
