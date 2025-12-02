@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/db';
 import { getAdminFromRequest } from '@/lib/auth-helpers';
+import { Prisma } from '@prisma/client';
 
 export async function GET(request: NextRequest) {
   try {
@@ -34,7 +35,7 @@ export async function GET(request: NextRequest) {
       'Created At',
     ];
 
-    const rows = bookings.map((booking) => [
+    const rows = bookings.map((booking: Prisma.BookingGetPayload<{}>) => [
       booking.id,
       booking.fullName,
       booking.phoneNumber,
