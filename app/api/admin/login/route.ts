@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const isValidPassword = await verifyPassword(password, admin.password_hash);
+    const isValidPassword = await verifyPassword(password, admin.passwordHash);
 
     if (!isValidPassword) {
       return NextResponse.json(

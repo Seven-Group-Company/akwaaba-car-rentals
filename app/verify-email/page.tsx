@@ -1,10 +1,10 @@
 'use client';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { Mail } from 'lucide-react';
 
-export default function VerifyEmailPage() {
+function VerifyEmailContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const initialEmail = searchParams.get('email') || '';
@@ -187,6 +187,26 @@ export default function VerifyEmailPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function VerifyEmailPage() {
+  return (
+    <Suspense fallback={
+      <main className="min-h-screen bg-black text-white flex items-center justify-center px-6">
+        <div className="w-full max-w-md text-center">
+          <div className="inline-flex items-center gap-2 mb-4">
+            <div className="w-8 h-8 bg-lime-400 rounded-full flex items-center justify-center">
+              <span className="text-black font-bold text-lg">A</span>
+            </div>
+            <span className="text-xl font-semibold">Akwaaba Car Rental</span>
+          </div>
+          <p className="text-gray-400">Loading...</p>
+        </div>
+      </main>
+    }>
+      <VerifyEmailContent />
+    </Suspense>
   );
 }
 

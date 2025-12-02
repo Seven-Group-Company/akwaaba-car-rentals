@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
@@ -21,7 +21,7 @@ interface Booking {
   created_at: string;
 }
 
-export default function AdminBookingsPage() {
+function BookingsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const statusFilter = searchParams.get('status');
@@ -234,6 +234,21 @@ export default function AdminBookingsPage() {
         )}
       </main>
     </div>
+  );
+}
+
+export default function AdminBookingsPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <RefreshCw className="w-8 h-8 animate-spin text-primary-600 mx-auto mb-4" />
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    }>
+      <BookingsContent />
+    </Suspense>
   );
 }
 
